@@ -1,16 +1,15 @@
 # WaniKani Client
+
 A TypeScript client for the [WaniKani API](https://docs.api.wanikani.com/20170710/)
 
 ## Usage
 
-
-
 ```typescript
-import { WaniKani } from "WaniKaniClient";
+import { WaniKani } from 'wanikani-client';
 
 const wanikani = new WaniKani(process.env.WANIKANI_API_TOKEN);
 
-const user = wanikani.user.get();
+const user = await wanikani.user.get();
 ```
 
 ## Need Help? Want to Contribute?
