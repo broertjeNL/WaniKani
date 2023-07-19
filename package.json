@@ -1,43 +1,51 @@
 {
-  "name": "wanikani-client",
-  "version": "1.0.0",
-  "description": "Fully typed client for the WaniKani API",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.4.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "@babel/preset-typescript": "^7.22.5",
-    "@types/node": "^20.3.1",
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
-    "@typescript-eslint/parser": "^5.59.11",
-    "eslint": "^8.42.0",
-    "typescript": "^5.1.6"
-  },
-  "main": "src/index.ts",
-  "scripts": {
-    "clean": "rm -rf ./lib",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -p tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "prepack": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./lib/esm/types/index.d.ts",
-        "default": "./lib/esm/index.mjs"
-      },
-      "require": {
-        "types": "./lib/cjs/types/index.d.ts",
-        "default": "./lib/cjs/index.js"
-      }
-    }
-  },
-  "files": [
-    "lib/**/*"
-  ]
+    "name": "wanikani-client",
+    "version": "1.0.0",
+    "description": "Fully typed client for the WaniKani API",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/broertjeNL/WaniKani/issues"
+    },
+    "homepage": "https://github.com/broertjeNL/WaniKani",
+    "repository": {
+        "type": "github",
+        "url": "https://github.com/broertjeNL/WaniKani.git"
+    },
+    "dependencies": {
+        "axios": "^1.4.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.22.5",
+        "@babel/preset-env": "^7.22.5",
+        "@babel/preset-typescript": "^7.22.5",
+        "@types/node": "^20.3.1",
+        "@typescript-eslint/eslint-plugin": "^5.59.11",
+        "@typescript-eslint/parser": "^5.59.11",
+        "eslint": "^8.42.0",
+        "typescript": "^5.1.6"
+    },
+    "main": "src/index.ts",
+    "scripts": {
+        "clean": "rm -rf ./lib",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+        "build:cjs": "tsc -p tsconfig.cjs.json",
+        "prepack": "npm run build",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./lib/esm/types/index.d.ts",
+                "default": "./lib/esm/index.mjs"
+            },
+            "require": {
+                "types": "./lib/cjs/types/index.d.ts",
+                "default": "./lib/cjs/index.js"
+            }
+        }
+    },
+    "files": [
+        "lib/**/*"
+    ]
 }
