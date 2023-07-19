@@ -1,6 +1,6 @@
 {
     "name": "wanikani-client",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Fully typed client for the WaniKani API",
     "license": "ISC",
     "bugs": {
