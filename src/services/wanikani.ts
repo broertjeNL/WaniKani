@@ -1,0 +1,38 @@
+import {
+    Assignments,
+    LevelProgressions,
+    Resets,
+    Reviews,
+    ReviewStatistics,
+    SpacedRepetitionSystems,
+    StudyMaterials,
+    Subjects,
+    Summary,
+    User,
+    VoiceActors,
+} from '../resources';
+import axios from 'axios';
+import { baseURL } from '../constants';
+
+export class WaniKani {
+    wanikaniClient = axios.create({
+        baseURL,
+        timeout: 1000,
+    });
+
+    constructor(api_token: string) {
+        this.wanikaniClient.defaults.headers.common['Authorization'] = 'Bearer ' + api_token;
+    }
+
+    public assignments: Assignments = new Assignments(this.wanikaniClient);
+    public levelProgressions: LevelProgressions = new LevelProgressions(this.wanikaniClient);
+    public resets: Resets = new Resets(this.wanikaniClient);
+    public reviews: Reviews = new Reviews(this.wanikaniClient);
+    public reviewStatistics: ReviewStatistics = new ReviewStatistics(this.wanikaniClient);
+    public spacedRepetitionSystems: SpacedRepetitionSystems = new SpacedRepetitionSystems(this.wanikaniClient);
+    public studyMaterials: StudyMaterials = new StudyMaterials(this.wanikaniClient);
+    public subjects: Subjects = new Subjects(this.wanikaniClient);
+    public summary: Summary = new Summary(this.wanikaniClient);
+    public user: User = new User(this.wanikaniClient);
+    public voiceActors: VoiceActors = new VoiceActors(this.wanikaniClient);
+}
