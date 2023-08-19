@@ -5,10 +5,11 @@ import { ReviewStatisticsData } from '../resources';
  * @param {ReviewStatisticsData} reviewStatistic
  */
 export const calculatePercentageCorrect = (reviewStatistic: ReviewStatisticsData) => {
-    const { meaning_correct, reading_correct, meaning_incorrect, reading_incorrect } = reviewStatistic;
-    return (
-        ((meaning_correct + reading_correct) /
-            (meaning_correct + reading_correct + meaning_incorrect + reading_incorrect)) *
-        100
-    );
+    const { meaning_correct, reading_correct } = reviewStatistic;
+    const totalCorrect = meaning_correct + reading_correct;
+    const totalTries = Object.values(reviewStatistic).reduce((acc, curr) => acc + curr, 0);
+
+    if (totalTries === 0) return 0;
+
+    return Math.round((totalCorrect / totalTries) * 100);
 };
