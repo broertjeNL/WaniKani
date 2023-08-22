@@ -6,11 +6,7 @@ import { AxiosInstance } from 'axios';
  * Reviews log all the correct and incorrect answers provided through the 'Reviews' section of WaniKani. Review records are created when a user answers all the parts of a subject correctly once; some subjects have both meaning or reading parts, and some only have one or the other. Note that reviews are not created for the quizzes in lessons.
  */
 export class Reviews {
-    wanikaniClient: AxiosInstance;
-
-    constructor(wanikaniClient: AxiosInstance) {
-        this.wanikaniClient = wanikaniClient;
-    }
+    constructor(private wanikaniClient: AxiosInstance) {}
 
     /**
      * Returns a collection of all reviews, ordered by ascending created_at, 1000 at a time.

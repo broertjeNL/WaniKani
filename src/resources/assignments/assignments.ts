@@ -11,10 +11,7 @@ import { AxiosInstance } from 'axios';
  * Assignments contain information about a user's progress on a particular subject, including their current state and timestamps for various progress milestones. Assignments are created when a user has passed all the components of the given subject and the assignment is at or below their current level for the first time.
  * */
 export class Assignments {
-    wanikaniClient: AxiosInstance;
-    constructor(wanikaniClient: AxiosInstance) {
-        this.wanikaniClient = wanikaniClient;
-    }
+    constructor(private wanikaniClient: AxiosInstance) {}
 
     /**
      * Returns a collection of all assignments, ordered by ascending created_at, 500 at a time.

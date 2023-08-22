@@ -12,11 +12,7 @@ import { AxiosInstance } from 'axios';
  * Subjects are the radicals, kanji, vocabulary, and kana_vocabulary that are learned through lessons and reviews. They contain basic dictionary information, such as meanings and/or readings, and information about their relationship to other items with WaniKani, like their level.
  * */
 export class Subjects {
-    wanikaniClient: AxiosInstance;
-
-    constructor(wanikaniClient: AxiosInstance) {
-        this.wanikaniClient = wanikaniClient;
-    }
+    constructor(private wanikaniClient: AxiosInstance) {}
 
     /**
      * Returns a collection of all subjects, ordered by ascending created_at, 1000 at a time.

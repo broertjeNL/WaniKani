@@ -8,11 +8,7 @@ import { AxiosInstance } from 'axios';
  * Resets contain information about when those resets happen, the starting level, and the target level.
  */
 export class Resets {
-    wanikaniClient: AxiosInstance;
-
-    constructor(wanikaniClient: AxiosInstance) {
-        this.wanikaniClient = wanikaniClient;
-    }
+    constructor(private wanikaniClient: AxiosInstance) {}
 
     /**
      * Returns a collection of all resets, ordered by ascending created_at, 500 at a time.

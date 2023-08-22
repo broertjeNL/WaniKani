@@ -5,11 +5,7 @@ import { AxiosInstance } from 'axios';
  * The user summary returns basic information for the user making the API request, identified by their API key.
  * */
 export class User {
-    wanikaniClient!: AxiosInstance;
-
-    constructor(wanikaniClient: AxiosInstance) {
-        this.wanikaniClient = wanikaniClient;
-    }
+    constructor(private wanikaniClient: AxiosInstance) {}
 
     /**
      * Returns a summary of user information.

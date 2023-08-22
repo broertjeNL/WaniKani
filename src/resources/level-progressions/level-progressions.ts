@@ -11,11 +11,7 @@ import { AxiosInstance } from 'axios';
  * - Have access to the level. Under /user, the data.level must be less than or equal to data.subscription.max_level_granted.
  */
 export class LevelProgressions {
-    wanikaniClient: AxiosInstance;
-
-    constructor(wanikaniClient: AxiosInstance) {
-        this.wanikaniClient = wanikaniClient;
-    }
+    constructor(private wanikaniClient: AxiosInstance) {}
 
     /**
      * Returns a collection of all level progressions, ordered by ascending created_at, 500 at a time.

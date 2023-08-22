@@ -12,11 +12,7 @@ import { AxiosInstance } from 'axios';
  * Study materials store user-specific notes and synonyms for a given subject. The records are created as soon as the user enters any study information.
  */
 export class StudyMaterials {
-    wanikaniClient: AxiosInstance;
-
-    constructor(wanikaniClient: AxiosInstance) {
-        this.wanikaniClient = wanikaniClient;
-    }
+    constructor(private wanikaniClient: AxiosInstance) {}
 
     /**
      * Returns a collection of all study material, ordered by ascending created_at, 500 at a time.

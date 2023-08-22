@@ -15,14 +15,15 @@ import axios from 'axios';
 import { baseURL } from '../constants';
 
 export class WaniKani {
+    constructor(private api_token: string) {}
+
     wanikaniClient = axios.create({
         baseURL,
         timeout: 1000,
+        headers: {
+            Authorization: 'Bearer ' + this.api_token,
+        },
     });
-
-    constructor(api_token: string) {
-        this.wanikaniClient.defaults.headers.common['Authorization'] = 'Bearer ' + api_token;
-    }
 
     public assignments: Assignments = new Assignments(this.wanikaniClient);
     public levelProgressions: LevelProgressions = new LevelProgressions(this.wanikaniClient);
