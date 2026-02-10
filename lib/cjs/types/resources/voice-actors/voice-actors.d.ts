@@ -4,7 +4,7 @@ import { AxiosInstance } from 'axios';
  * Available voice actors used for vocabulary reading pronunciation audio.
  * */
 export declare class VoiceActors {
-    wanikaniClient: AxiosInstance;
+    private wanikaniClient;
     constructor(wanikaniClient: AxiosInstance);
     /**
      * Returns a collection of all voice_actors, ordered by ascending created_at, 500 at a time.

@@ -4,7 +4,7 @@ import { AxiosInstance } from 'axios';
  * Available spaced repetition systems used for calculating srs_stage changes to {@link Assignments|Assignments} and {@link Reviews|Reviews}. Has relationship with {@link Subjects|Subjects}
  */
 export declare class SpacedRepetitionSystems {
-    wanikaniClient: AxiosInstance;
+    private wanikaniClient;
     constructor(wanikaniClient: AxiosInstance);
     /**
      * Returns a collection of all spaced_repetition_systems, ordered by ascending id, 500 at a time.

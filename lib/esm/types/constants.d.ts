@@ -3,7 +3,7 @@ export declare const audioTypes: readonly ["audio/mpeg", "audio/ogg"];
 export declare const readingClassifications: readonly ["kunyomi", "nanori", "onyomi"];
 export declare const auxiliaryMeaningTypes: readonly ["whitelist", "blacklist"];
 export declare const objects: readonly ["kana_vocabulary", "kanji", "radical", "vocabulary"];
-export declare const intervalUnits: readonly ["milliseconds", "seconds", "minutes", "hours", "days", "weeks"];
+export declare const intervalUnits: readonly ["milliseconds", "seconds", "minutes", "hours", "days", "weeks", "months"];
 export declare const lessonOrderings: readonly ["ascending_level_then_subject", "shuffled", "ascending_level_then_shuffled"];
 export declare const reviewOrderings: readonly ["shuffled", "lower_levels_first"];
 export declare const subscriptionTypes: readonly ["free", "recurring", "lifetime"];

@@ -1,10 +1,4 @@
-import { IntervalUnit, SpacedRepetitionSystem, Stage } from '../resources';
-/**
- * Calculates how much time is left until the next {@link Reviews|Reviews}
- * @param {SpacedRepetitionSystem} srs_stage
- * @param {number} srs
- */
-export declare const calculateSrsTimeLeft: (srs_stage: number | undefined, srs: SpacedRepetitionSystem) => number;
+import { IntervalUnit, Stage } from '../resources';
 /**
  * Map for converting {@link IntervalUnit|interval units} to seconds.
  */

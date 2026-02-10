@@ -6,7 +6,7 @@ import { AxiosInstance } from 'axios';
  * A review statistic is created when the user has done their first review on the related subject.
  */
 export declare class ReviewStatistics {
-    wanikaniClient: AxiosInstance;
+    private wanikaniClient;
     constructor(wanikaniClient: AxiosInstance);
     /**
      * Returns a collection of all review statistics, ordered by ascending created_at, 500 at a time.
