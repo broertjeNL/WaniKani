@@ -13,6 +13,7 @@ import {
 } from '../resources';
 import axios from 'axios';
 import { baseURL } from '../constants';
+import * as qs from 'qs';
 
 export class WaniKani {
     constructor(private api_token: string) {}
@@ -22,6 +23,10 @@ export class WaniKani {
         timeout: 1000,
         headers: {
             Authorization: 'Bearer ' + this.api_token,
+        },
+        paramsSerializer: {
+            encode: (params) => qs.stringify(params, { arrayFormat: 'comma' }),
+            indexes: null,
         },
     });
 
