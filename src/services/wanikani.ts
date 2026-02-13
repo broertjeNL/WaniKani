@@ -11,34 +11,48 @@ import {
     User,
     VoiceActors,
 } from '../resources';
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { baseURL } from '../constants';
 import * as qs from 'qs';
 
 export class WaniKani {
-    constructor(private api_token: string) {}
+    wanikaniClient: AxiosInstance;
 
-    wanikaniClient = axios.create({
-        baseURL,
-        timeout: 1000,
-        headers: {
-            Authorization: 'Bearer ' + this.api_token,
-        },
-        paramsSerializer: {
-            encode: (params) => qs.stringify(params, { arrayFormat: 'comma' }),
-            indexes: null,
-        },
-    });
+    public assignments: Assignments;
+    public levelProgressions: LevelProgressions;
+    public resets: Resets;
+    public reviews: Reviews;
+    public reviewStatistics: ReviewStatistics;
+    public spacedRepetitionSystems: SpacedRepetitionSystems;
+    public studyMaterials: StudyMaterials;
+    public subjects: Subjects;
+    public summary: Summary;
+    public user: User;
+    public voiceActors: VoiceActors;
 
-    public assignments: Assignments = new Assignments(this.wanikaniClient);
-    public levelProgressions: LevelProgressions = new LevelProgressions(this.wanikaniClient);
-    public resets: Resets = new Resets(this.wanikaniClient);
-    public reviews: Reviews = new Reviews(this.wanikaniClient);
-    public reviewStatistics: ReviewStatistics = new ReviewStatistics(this.wanikaniClient);
-    public spacedRepetitionSystems: SpacedRepetitionSystems = new SpacedRepetitionSystems(this.wanikaniClient);
-    public studyMaterials: StudyMaterials = new StudyMaterials(this.wanikaniClient);
-    public subjects: Subjects = new Subjects(this.wanikaniClient);
-    public summary: Summary = new Summary(this.wanikaniClient);
-    public user: User = new User(this.wanikaniClient);
-    public voiceActors: VoiceActors = new VoiceActors(this.wanikaniClient);
+    constructor(api_token: string) {
+        this.wanikaniClient = axios.create({
+            baseURL,
+            timeout: 1000,
+            headers: {
+                Authorization: 'Bearer ' + api_token,
+            },
+            paramsSerializer: {
+                serialize: (params) => qs.stringify(params, { arrayFormat: 'comma' }),
+                indexes: null,
+            },
+        });
+
+        this.assignments = new Assignments(this.wanikaniClient);
+        this.levelProgressions = new LevelProgressions(this.wanikaniClient);
+        this.resets = new Resets(this.wanikaniClient);
+        this.reviews = new Reviews(this.wanikaniClient);
+        this.reviewStatistics = new ReviewStatistics(this.wanikaniClient);
+        this.spacedRepetitionSystems = new SpacedRepetitionSystems(this.wanikaniClient);
+        this.studyMaterials = new StudyMaterials(this.wanikaniClient);
+        this.subjects = new Subjects(this.wanikaniClient);
+        this.summary = new Summary(this.wanikaniClient);
+        this.user = new User(this.wanikaniClient);
+        this.voiceActors = new VoiceActors(this.wanikaniClient);
+    }
 }

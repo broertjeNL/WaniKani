@@ -1,9 +1,7 @@
 import { Assignments, LevelProgressions, Resets, Reviews, ReviewStatistics, SpacedRepetitionSystems, StudyMaterials, Subjects, Summary, User, VoiceActors } from '../resources';
-import axios from 'axios';
+import { AxiosInstance } from 'axios';
 export declare class WaniKani {
-    private api_token;
-    constructor(api_token: string);
-    wanikaniClient: axios.AxiosInstance;
+    wanikaniClient: AxiosInstance;
     assignments: Assignments;
     levelProgressions: LevelProgressions;
     resets: Resets;
@@ -15,5 +13,6 @@ export declare class WaniKani {
     summary: Summary;
     user: User;
     voiceActors: VoiceActors;
+    constructor(api_token: string);
 }
 //# sourceMappingURL=wanikani.d.ts.map
